@@ -1,6 +1,6 @@
 import pygame
-import os
-import time
+# import os
+# import time
 
 #控制音频播放
 
@@ -43,6 +43,7 @@ class AudioPlayer:
     def jump_to(self, seconds):
         if self.is_playing:
             pygame.mixer.music.stop()
+            self.is_playing = False
         self.current_position = seconds
         self.play()
 
@@ -57,3 +58,4 @@ class AudioPlayer:
             return pygame.mixer.music.get_pos() // 1000  # Convert milliseconds to seconds
         else:
             return self.current_position
+        
