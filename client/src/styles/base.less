@@ -1,0 +1,72 @@
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5vh;
+  font-weight: 400;
+  font-size: 2vh;
+
+  color-scheme: light dark;
+  color: @font-black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: @theme-blue;
+  text-decoration: inherit;
+}
+a:hover {
+  color: @theme-blue;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.1vh;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.content{
+  height: 100vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+  padding-top: @headHight;
+}
+
+.title{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.text{
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+

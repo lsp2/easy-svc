@@ -1,0 +1,46 @@
+.btn{
+  font-size: 1rem;
+  padding: 0.8rem  1rem;
+  border-radius: 0.2rem;
+  border-width: 0.1rem;
+  border-style: solid;
+  display: block;
+  box-sizing: border-box;
+}
+
+.normal{
+  color: #fff;
+  background-color: @theme-blue;
+  border-color: @theme-blue;
+}
+
+.hollow{
+  color: @theme-blue;
+  background-color: #fff;
+  border-color: @theme-blue;
+}
+
+.normal:active{
+  background-color: @theme-white;
+  color: @theme-blue;
+}
+
+.hollow:active{
+  background-color: @theme-blue;
+  color: @theme-white;
+}
+
+.long{
+  // width: 90vw;
+  width: 100%;
+}
+
+.transparent{
+  color: @font-black;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.transparent:active{
+  color: @theme-blue;
+}
