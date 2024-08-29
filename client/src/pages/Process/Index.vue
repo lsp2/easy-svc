@@ -76,7 +76,7 @@
 
   const onDownloadFile = async()=>{
     const res = await downloadAudio(processStore.file.name);
-    const blobUrl = window.URL.createObjectURL(new Blob([res.data]));
+    const blobUrl = window.URL.createObjectURL(new Blob([res], {type:"audio/*"}));
     const a = document.createElement('a');
     a.style.display = 'none';
     a.download = `${processStore.file.spk}-${processStore.file.name}`;
@@ -213,11 +213,11 @@
           <icon-folder-add v-if="processStore.stage===0" class="icon"/>
           <icon-file-audio v-else  class="icon"/>
           <div class="text mt-1 file-name" v-if="processStore.stage>=3 ">{{ processStore.file.name }}</div>
-          <div class="text mt-1 file-name" v-if="file && processStore.stage<3">{{ file.name }}</div>
+          <div class="text mt-1 file-name" v-if="file && processStore.stage===1">{{ file.name }}</div>
           <div class="text mt-1 stage">{{ stateText[processStore.stage] }}</div>
         </div>
       </label>
-      <input id="select" type="file" accept=".wav, .mp3, .flac" @change="onSelectLocalFile" style="display: none;" :disabled="processStore.stage!==0"/>
+      <input id="select" type="file" accept="audio/*" @change="onSelectLocalFile" style="display: none;" :disabled="processStore.stage!==0"/>
     </div>
     <div class="foot-box flex-center">
       <button class="btn normal long mb-1" v-if="processStore.stage===1" @click="onUpload">上传</button>
@@ -255,6 +255,8 @@
       background-color: @theme-blue;
       border-radius: 0.2rem;
       color: @font-white;
+      width: 5rem;
+      margin: 1rem auto;
     }
   }
 

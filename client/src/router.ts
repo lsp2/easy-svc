@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory }  from 'vue-router'
 import { getToken } from '@/utils/auth';
+import Home from '@/pages/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: '/',
-      name: 'Index'
+      name: 'Index',
+      component: Home
     },
     {
       path: '/vocals',

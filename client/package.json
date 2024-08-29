@@ -15,7 +15,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "swiper": "^11.1.4",
     "vue": "^3.4.29",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.55.3",

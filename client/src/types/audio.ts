@@ -29,7 +29,3 @@ export interface DeleteRes extends Response {}
 export interface ProgressRes extends Response {
   value: number
 }
-
-export interface DownloadRes {
-  data: Blob
-}

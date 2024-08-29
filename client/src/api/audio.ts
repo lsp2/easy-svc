@@ -1,5 +1,5 @@
 import request from "./requst.ts"
-import { UploadRes, DeleteRes, GetUploadRes, ProgressRes, GetProcessRes, DownloadRes } from "@/types/audio.ts";
+import { UploadRes, DeleteRes, GetUploadRes, ProgressRes, GetProcessRes } from "@/types/audio.ts";
 
 export function startUpload(data: FormData, cb: Function): Promise<UploadRes>{
   return request.post('/upload/start', data, {
@@ -34,7 +34,7 @@ export function getProgressValue(): Promise<ProgressRes>{
   return request.get(`/process/progress`);
 }
 
-export function downloadAudio(fileName: string): Promise<DownloadRes>{
+export function downloadAudio(fileName: string): Promise<Blob>{
   return request.get(`/process/audio/download/${fileName}`, {
     responseType: 'blob'
   });

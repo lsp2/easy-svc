@@ -16,7 +16,7 @@ server.config['JWT_SECRET_KEY'] = 'HS256'
 server.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=7)
 JWTManager(server)
 CORS(server, supports_credentials=True)  # 设置跨域
-HOST = "127.0.0.1"
+HOST = "192.168.107.224"
 
 log = logging.getLogger('werkzeug')
 # log.setLevel(logging.ERROR)
@@ -186,8 +186,10 @@ def delete_process_file():
 @server.route('/process/audio/download/<path:file_name>', methods=['GET'], endpoint="downloadProcessFile")
 @jwt_required()    
 def download_file(file_name):
-    id = get_jwt_identity()
-    return send_from_directory(os.path.dirname(__file__) + '/output/', id + "-" + file_name , as_attachment=True)
+
+    id = get_jwt_identity()    
+    file_path = os.path.dirname(__file__) + '/output/' + id + "-" + file_name
+    return send_file(file_path, as_attachment=True)
  
 @server.route('/user/info', methods=['GET'], endpoint="getUserInfo")
 @jwt_required()

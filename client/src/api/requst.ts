@@ -4,8 +4,8 @@ import type  { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 // 创建axios实例
 const request = axios.create({
-   baseURL: '/api', // 设置API的基础URL
-  //  baseURL: '',
+  //  baseURL: '/api', // 设置API的基础URL
+   baseURL: '',
    timeout: 600000, 
 });
 

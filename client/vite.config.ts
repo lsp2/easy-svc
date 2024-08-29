@@ -32,7 +32,7 @@ export default defineConfig({
     open: true, //启动后是否自动打开浏览器,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8888', // 设置代理目标    
+        target: 'http://127.0.0.1:8888', // 设置代理目标   
         changeOrigin: true, // 是否改变请求源地址
         rewrite: (path) => path.replace(/^\/api/, '') // 将 /api 替换为空字符串
       }
