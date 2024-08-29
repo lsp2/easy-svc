@@ -6,8 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: ()=> import('@/pages/Index.vue')
+      name: 'Index'
     },
     {
       path: '/vocals',
